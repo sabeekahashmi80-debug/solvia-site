@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Case example — Realyst</title>
-<meta name="description" content="Automotive manufacturing programme — regulatory deadline. An illustrative scenario.">
+<title>The problem — Realyst</title>
+<meta name="description" content="Scheduling software is restricted on purpose, and that's exactly what breaks it.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -121,9 +121,9 @@ footer a.link:hover{color:var(--blue);}
     <nav>
       <a href="index.html" class="logo"><span class="logo-dot"></span>Realyst</a>
       <div class="nav-links">
-        <a href="problem.html">Problem</a>
+        <a href="problem.html" class="active">Problem</a>
         <a href="how-it-works.html">How it works</a>
-        <a href="case-study.html" class="active">Case example</a>
+        <a href="case-study.html">Case example</a>
         <a href="why-now.html">Why now</a>
       </div>
       <a class="nav-cta" href="contact.html">Talk to us</a>
@@ -133,17 +133,69 @@ footer a.link:hover{color:var(--blue);}
 
 <section class="page-hero" style="padding-bottom:20px;">
   <div class="wrap page-hero-inner">
-    <div class="kicker">Case example</div>
-    <h1>Automotive manufacturing programme — regulatory deadline</h1>
+    <div class="kicker">The problem</div>
+    <h1>Scheduling software is restricted on purpose — and that's exactly what breaks it.</h1>
+    <p class="sub">Primavera P6 and Microsoft Project are deliberately locked to a trained planning function. An untrained edit to predecessor/successor logic can corrupt the critical path across an entire programme, so access stays narrow. The same design choice that protects the schedule also cuts it off from the people who see problems first.</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="how-it-works.html">See how Realyst fixes this</a>
+      <a class="btn-ghost" href="contact.html">Talk to us</a>
+    </div>
   </div>
 </section>
 <section style="padding-top:0;">
   <div class="wrap">
-    <div class="case">
-      <div class="case-tag">Illustrative scenario</div>
-      <h3>A single test window nearly delayed a much larger vehicle programme</h3>
-      <p>A programme tied to an EU emissions certification deadline risked delaying a much larger vehicle programme. The critical path ran through a custom-built instrument using a specialist material not yet supported by existing certification tooling — compounded by limited UK supply, fixed hot/cold-chamber test windows that couldn't be compressed, and a factory shutdown period. Governance met monthly. Issues discovered between cycles waited for the next board unless someone manually flagged them as urgent.</p>
-      <div class="case-note">Composite scenario based on patterns from capital and manufacturing programmes. Not a named client engagement.</div>
+    <div class="mockup">
+      <div class="mockup-bar">
+        <div class="mockup-dots"><span></span><span></span><span></span></div>
+        <div class="mockup-title">Master Schedule vs. Field Reality — Task 4471</div>
+      </div>
+      <svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto; display:block;">
+        <rect x="0" y="0" width="900" height="220" fill="#12141C"/>
+        <text x="24" y="34" fill="#8A93A6" font-family="IBM Plex Mono, monospace" font-size="11">MASTER SCHEDULE (P6)</text>
+        <rect x="24" y="46" width="480" height="14" rx="3" fill="rgba(160,197,232,0.35)"/>
+        <text x="514" y="57" fill="#8A93A6" font-family="IBM Plex Mono, monospace" font-size="10">Assumes on-time supplier delivery</text>
+
+        <text x="24" y="94" fill="#8A93A6" font-family="IBM Plex Mono, monospace" font-size="11">FIELD REALITY (CAPTURED)</text>
+        <rect x="24" y="106" width="230" height="14" rx="3" fill="rgba(160,197,232,0.35)"/>
+        <rect x="254" y="106" width="90" height="14" rx="3" fill="#E4602A"/>
+        <rect x="344" y="106" width="160" height="14" rx="3" fill="rgba(160,197,232,0.20)" stroke="#E4602A" stroke-dasharray="3 3"/>
+        <circle cx="254" cy="113" r="4" fill="#E4602A"/>
+        <text x="254" y="140" fill="#F3B79A" font-family="IBM Plex Mono, monospace" font-size="10">Delay logged from shift report — 5 days</text>
+
+        <line x1="24" y1="164" x2="876" y2="164" stroke="rgba(255,255,255,0.08)"/>
+        <text x="24" y="188" fill="#E7E9F0" font-family="Inter, sans-serif" font-size="13">Recalculated impact to critical path</text>
+        <text x="700" y="188" fill="#E4602A" font-family="IBM Plex Mono, monospace" font-size="13" font-weight="600">+5 days</text>
+      </svg>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Where the lag comes from</div>
+      <h2>The delay is structural, not a communication failure.</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-row"><div class="tl-tag">D0</div><div class="tl-body"><strong>Operations sees it first</strong><span>No schedule access, no formal channel to flag it.</span></div></div>
+      <div class="tl-row"><div class="tl-tag">D+2–14</div><div class="tl-body"><strong>Planning finds out</strong><span>Updates the master schedule once it reaches them.</span></div></div>
+      <div class="tl-row"><div class="tl-tag">D+30</div><div class="tl-body"><strong>Steering board meets</strong><span>On its monthly cycle — not when the issue occurred.</span></div></div>
+      <div class="tl-row"><div class="tl-tag">D+X</div><div class="tl-body"><strong>Decision made</strong><span>Later than it needed to be.</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="how">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Why existing tools don't close it</div>
+      <h2>Enterprise software solves its own domain. Nobody reasons across them.</h2>
+    </div>
+    <div class="tool-grid">
+      <div class="tool-card"><h3>Primavera / MSP</h3><p>Manages the schedule — assumes information already reached the planner.</p></div>
+      <div class="tool-card"><h3>ALICE</h3><p>Optimises sequencing once the schedule is current — doesn't solve how it becomes current.</p></div>
+      <div class="tool-card"><h3>SAP / ERP</h3><p>Records financial and procurement transactions in its own silo.</p></div>
+      <div class="tool-card"><h3>Power BI</h3><p>Visualises whatever data it's given — after the fact.</p></div>
+      <div class="tool-card"><h3>Agile ceremonies</h3><p>Adds stand-ups and tracking overhead on top of the same siloed departments.</p></div>
+      <div class="tool-card highlight"><h3>Realyst</h3><p>Reads the signal where it already lives and routes it to the schedule — the layer that was missing.</p></div>
     </div>
   </div>
 </section>
